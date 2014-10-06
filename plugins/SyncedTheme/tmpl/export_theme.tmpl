@@ -1,0 +1,17 @@
+<mtapp:setting
+    id="synced_theme_link_template"
+    label="<__trans phrase="Link Template">"
+    hint="<__trans phrase="Link all the template to the files of theme directory.">"
+    show_hint="1"
+    show_warning="1">
+    <input type="checkbox" id="synced_theme_link_template" name="synced_theme_link_template" value="1"<mt:IfSyncedThemeLinkTemplate> checked="checked"</mt:IfSyncedThemeLinkTemplate>/>
+</mtapp:setting>
+
+<mtapp:setting
+    id="synced_theme_assign_theme_id"
+    label="<__trans phrase="Assign theme ID">"
+    hint="<__trans phrase="Assign ID of the exported theme to this blog.">"
+    show_hint="1"
+    show_warning="1">
+    <input type="checkbox" id="synced_theme_assign_theme_id" name="synced_theme_assign_theme_id" value="1" />
+</mtapp:setting>

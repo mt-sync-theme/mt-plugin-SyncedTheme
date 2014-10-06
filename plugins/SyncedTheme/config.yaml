@@ -1,0 +1,42 @@
+id: SyncedTheme
+name: SyncedTheme
+version: 0.01
+description: <__trans phrase="This plugin enables the MT to synchronize the template object, the theme and the local file.">
+author_name: <__trans phrase="Taku AMANO">
+author_link: http://taaas.jp/
+plugin_link: https://github.com/mt-sync-theme/mt-plugin-SyncedTheme
+
+l10n_class: MT::Plugin::SyncedTheme::L10N
+
+schema_version: 0.01
+object_types:
+  blog:
+    synced_theme_link_template:
+      type: boolean
+      default: 0
+
+tags:
+  block:
+    IfSyncedThemeLinkTemplate?: $SyncedTheme::MT::Plugin::SyncedTheme::Tag::if_synced_theme_link_template
+
+applications:
+  cms:
+    callbacks:
+      template_param.edit_blog: $SyncedTheme::MT::Plugin::SyncedTheme::App::CMS::param_edit_blog
+      template_param.edit_website: $SyncedTheme::MT::Plugin::SyncedTheme::App::CMS::param_edit_blog
+      template_param.refresh_templates: $SyncedTheme::MT::Plugin::SyncedTheme::App::CMS::param_refresh_templates
+      template_param.export_theme: $SyncedTheme::MT::Plugin::SyncedTheme::App::CMS::param_export_theme
+      template_source.theme_export_replace: $SyncedTheme::MT::Plugin::SyncedTheme::App::CMS::source_theme_export_replace
+  data_api:
+    endpoints:
+      - id: post_synced_theme_files
+        route: /synced-theme/:theme_id/files
+        verb: POST
+        handler: $SyncedTheme::MT::Plugin::SyncedTheme::App::DataAPI::post_files
+
+callbacks:
+  MT::Blog::pre_save: $SyncedTheme::MT::Plugin::SyncedTheme::Blog::pre_save
+  MT::Website::pre_save: $SyncedTheme::MT::Plugin::SyncedTheme::Blog::pre_save
+  MT::Blog::post_save: $SyncedTheme::MT::Plugin::SyncedTheme::Blog::post_save
+  MT::Website::post_save: $SyncedTheme::MT::Plugin::SyncedTheme::Blog::post_save
+  post_apply_theme: $SyncedTheme::MT::Plugin::SyncedTheme::Theme::post_apply_theme
