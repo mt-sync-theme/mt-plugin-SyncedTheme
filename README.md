@@ -10,7 +10,7 @@ This plugin enables the MT to synchronize the template object, the theme and the
 
 * You can link all the templates to the files of theme directory.
 * This plug-in provides some endpoints of Data API.
-    * These endpoints will be used by [mt-sync-theme](https://github.com/mt-sync-theme/mt-sync-theme).
+    * These endpoints will be used by [mt-sync-theme](https://github.com/mt-sync-theme/mt-sync-theme) and [MTSyncTheme.app](https://github.com/mt-sync-theme/MTSyncTheme.app).
 
 
 ## Requirements
