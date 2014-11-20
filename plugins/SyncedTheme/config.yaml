@@ -1,6 +1,6 @@
 id: SyncedTheme
 name: SyncedTheme
-version: 0.01
+version: 0.02
 description: <__trans phrase="This plugin enables the MT to synchronize the template object, the theme and the local file.">
 author_name: <__trans phrase="Taku AMANO">
 author_link: http://taaas.jp/

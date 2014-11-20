@@ -68,7 +68,8 @@ sub _preview_target_template_objects {
     );
 
     my @updated_template_files
-        = grep { $_ =~ m/\A$template_base_path/ } @$updated_files;
+        = grep { ( abs_path($_) || '' ) =~ m/\A$template_base_path/ }
+        @$updated_files;
 
     my $find_template;
     $find_template = sub {
