@@ -13,6 +13,11 @@ This plugin enables the MT to synchronize the template object, the theme and the
     * These endpoints will be used by [mt-sync-theme](https://github.com/mt-sync-theme/mt-sync-theme) and [MTSyncTheme.app](https://github.com/mt-sync-theme/MTSyncTheme.app).
 
 
+## Restrictions
+
+When this plugin applyed to the template which includes the tag `<__trans ... />`, the template is saved in translated.
+
+
 ## Requirements
 * MT6
 
