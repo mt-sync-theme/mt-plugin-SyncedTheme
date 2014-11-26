@@ -332,7 +332,7 @@ sub _post_files_handler {
     my ( $app, $endpoint ) = @_;
 
     my $user = $app->user;
-    $app->error(403)
+    return $app->error(403)
         unless $user->can_do('edit_templates');
 
     my $theme = _theme(@_)
